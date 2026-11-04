@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#101010" />
+  <meta name="description" content="대중교통과 택시 업무 담당 원남경의 개인 포트폴리오" />
+  <title>원남경 | Portfolio</title>
+  <style>
+    :root { color-scheme: light; --ink:#111; --paper:#f7f7f5; --muted:#6c6c6c; --line:#dededb; --white:#fff; }
+    *,*::before,*::after {box-sizing:border-box}
+    html {scroll-behavior:smooth}
+    body {margin:0;background:var(--paper);color:var(--ink);font-family:"Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",Arial,sans-serif;letter-spacing:-.035em;-webkit-font-smoothing:antialiased}
+    a {color:inherit;text-decoration:none}
+    button,a { -webkit-tap-highlight-color:transparent }
+    :focus-visible {outline:2px solid #111;outline-offset:4px}
+    .wrap {width:min(1160px,calc(100% - 88px));margin-inline:auto}
+    .site-header {height:82px;border-bottom:1px solid var(--line)}
+    .header-inner {height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand {font-size:15px;font-weight:850;letter-spacing:-.045em}
+    .brand span {font-weight:400;color:var(--muted);margin-left:11px}
+    .top-nav {display:flex;gap:30px;font-size:12px;font-weight:700;letter-spacing:.02em}
+    .top-nav a {transition:opacity .15s}.top-nav a:hover {opacity:.45}
+    .hero {padding-top:96px;padding-bottom:96px;display:grid;grid-template-columns:minmax(0,1.55fr) minmax(280px,.65fr);align-items:end;gap:50px;min-height:570px}
+    .eyebrow {display:flex;align-items:center;gap:11px;text-transform:uppercase;letter-spacing:.19em;font-size:11px;font-weight:800}
+    .eyebrow::before {content:"";display:block;width:22px;height:2px;background:var(--ink)}
+    h1 {font-weight:850;font-size:clamp(76px,10.8vw,156px);letter-spacing:-.105em;line-height:.99;margin:36px 0 36px;white-space:nowrap}
+    .intro {font-size:clamp(18px,2.2vw,23px);font-weight:500;line-height:1.75;color:#3d3d3d;max-width:620px;letter-spacing:-.045em}
+    .intro strong {color:var(--ink);font-weight:800}
+    .hero-side {border-top:2px solid var(--ink);padding-top:20px;margin-bottom:7px}
+    .small-label {display:block;color:var(--muted);text-transform:uppercase;letter-spacing:.17em;font-size:10px;font-weight:800;margin-bottom:16px}
+    .hero-side p {font-size:14px;line-height:1.9;margin:0 0 25px}
+    .scroll-hint {font-size:11px;font-weight:800;letter-spacing:.12em;display:inline-flex;align-items:center;gap:12px}
+    .scroll-hint span {font-size:20px;font-weight:400}
+    .divider-band {background:#111;color:white;padding:19px 0}
+    .band-inner {display:flex;justify-content:space-between;gap:16px;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+    .section {padding:100px 0;border-bottom:1px solid var(--line)}
+    .section-head {display:flex;justify-content:space-between;gap:24px;align-items:baseline;margin-bottom:48px}
+    .section-number {font-size:12px;color:var(--muted);font-weight:750;letter-spacing:.1em}
+    h2 {font-size:clamp(35px,5vw,64px);line-height:1.15;letter-spacing:-.075em;margin:0;font-weight:850}
+    .about-grid {display:grid;grid-template-columns:1fr 1.15fr;gap:64px;align-items:start}
+    .about-lead {font-size:25px;line-height:1.55;letter-spacing:-.055em;font-weight:700;margin:0}
+    .facts {margin:0;border-top:1px solid var(--line)}
+    .fact {display:grid;grid-template-columns:110px 1fr;gap:20px;padding:22px 0;border-bottom:1px solid var(--line);align-items:center}
+    .fact dt {font-size:12px;color:var(--muted);font-weight:700}
+    .fact dd {font-size:17px;font-weight:750;margin:0}
+    .work-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+    .work-card {background:var(--white);border:1px solid var(--line);min-height:225px;padding:28px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .17s,border-color .17s,box-shadow .17s}
+    .work-card:hover {transform:translateY(-4px);border-color:#777;box-shadow:0 12px 26px #00000009}
+    .work-icon {font-size:12px;letter-spacing:.12em;color:var(--muted);font-weight:800}
+    .work-card h3 {font-size:27px;letter-spacing:-.06em;margin:0 0 8px}
+    .work-card p {font-size:13px;color:var(--muted);margin:0;line-height:1.7}
+    .links-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+    .page-link {display:flex;flex-direction:column;justify-content:space-between;min-height:215px;background:#111;color:#fff;padding:26px;border:1px solid #111;transition:background .14s,color .14s,transform .14s}
+    .page-link:hover,.page-link:focus-visible {background:#fff;color:#111;transform:translateY(-3px)}
+    .page-link:active {transform:translateY(1px);background:#d8d8d8;color:#111}
+    .page-link-top {display:flex;align-items:center;justify-content:space-between;font-size:11px;font-weight:800;letter-spacing:.1em}
+    .page-link-num {font-size:75px;line-height:1;letter-spacing:-.09em;font-weight:850}
+    .page-link .arrow {font-size:22px;font-weight:400}
+    .section-note {color:var(--muted);font-size:12px;line-height:1.8;margin:18px 0 0}
+    .footer {padding:36px 0 48px}
+    .footer-inner {display:flex;justify-content:space-between;gap:15px;align-items:center;color:var(--muted);font-size:12px}
+    .footer strong {color:var(--ink);font-size:14px}
+    @media(max-width:800px) {
+      .wrap{width:min(100% - 40px,560px)}.site-header{height:68px}.brand span{display:none}.top-nav{gap:17px;font-size:11px}
+      .hero{padding-top:88px;padding-bottom:65px;min-height:auto;grid-template-columns:1fr;gap:56px}
+      h1{font-size:clamp(68px,14vw,108px)}.hero-side{max-width:360px}.section{padding:70px 0}
+      .about-grid{grid-template-columns:1fr;gap:34px}.work-grid,.links-grid{grid-template-columns:1fr}
+      .work-card{min-height:180px}.page-link{min-height:170px}.page-link-num{font-size:62px}
+    }
+    @media(max-width:390px) {.wrap{width:calc(100% - 32px)}.top-nav{gap:10px}.top-nav a{font-size:10px}h1{font-size:64px}.section-head{margin-bottom:30px}.band-inner{font-size:9px}}
+    @media(prefers-reduced-motion:reduce) {html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="#top" class="brand" aria-label="원남경 포트폴리오 맨 위로">WON NAM GYEONG <span>/ PORTFOLIO</span></a>
+      <nav class="top-nav" aria-label="메인 메뉴"><a href="#about">ABOUT</a><a href="#work">WORK</a><a href="#pages">PAGES</a></nav>
+    </div>
+  </header>
+  <main id="top">
+    <section class="wrap hero" aria-labelledby="hero-name">
+      <div>
+        <div class="eyebrow">PERSONAL PORTFOLIO / PROFILE</div>
+        <h1 id="hero-name">원남경<span aria-hidden="true">.</span></h1>
+        <p class="intro"><strong>대중교통과</strong>에서 <strong>택시 업무</strong>를 담당하고 있습니다.<br />맡은 일을 명확하고 체계적으로 수행하며 경험을 쌓아가고 있습니다.</p>
+      </div>
+      <aside class="hero-side">
+        <span class="small-label">AT A GLANCE</span>
+        <p>소속&nbsp; 대중교통과<br />담당&nbsp; 택시<br />경력&nbsp; 10개월</p>
+        <a href="#about" class="scroll-hint">EXPLORE PROFILE <span aria-hidden="true">↘</span></a>
+      </aside>
+    </section>
+    <div class="divider-band"><div class="wrap band-inner"><span>PUBLIC TRANSPORTATION</span><span>PROFILE / 2026</span></div></div>
+    <section id="about" class="wrap section" aria-labelledby="about-title">
+      <div class="section-head"><h2 id="about-title">About me<span aria-hidden="true">.</span></h2><span class="section-number">01 / PROFILE</span></div>
+      <div class="about-grid">
+        <p class="about-lead">현장에서 필요한 업무를<br />정확하게 이해하고,<br />꾸준히 경험을 쌓아갑니다.</p>
+        <dl class="facts"><div class="fact"><dt>이름</dt><dd>원남경</dd></div><div class="fact"><dt>소속</dt><dd>대중교통과</dd></div><div class="fact"><dt>담당 업무</dt><dd>택시</dd></div><div class="fact"><dt>주요 경력</dt><dd>10개월</dd></div></dl>
+      </div>
+    </section>
+    <section id="work" class="wrap section" aria-labelledby="work-title">
+      <div class="section-head"><h2 id="work-title">Work & Experience<span aria-hidden="true">.</span></h2><span class="section-number">02 / EXPERIENCE</span></div>
+      <div class="work-grid">
+        <article class="work-card"><span class="work-icon">01 / DEPARTMENT</span><div><h3>대중교통과</h3><p>현재 소속 부서</p></div></article>
+        <article class="work-card"><span class="work-icon">02 / RESPONSIBILITY</span><div><h3>택시 업무</h3><p>현재 담당 업무 분야</p></div></article>
+        <article class="work-card"><span class="work-icon">03 / EXPERIENCE</span><div><h3>10개월</h3><p>주요 경력 기간</p></div></article>
+      </div>
+    </section>
+    <section id="pages" class="wrap section" aria-labelledby="pages-title">
+      <div class="section-head"><h2 id="pages-title">Explore pages<span aria-hidden="true">.</span></h2><span class="section-number">03 / LINKS</span></div>
+      <div class="links-grid" aria-label="추가 페이지 링크">
+        <a class="page-link" href="1.html"><span class="page-link-top">PAGE 01 <span class="arrow" aria-hidden="true">↗</span></span><span class="page-link-num">1</span></a>
+        <a class="page-link" href="2.html"><span class="page-link-top">PAGE 02 <span class="arrow" aria-hidden="true">↗</span></span><span class="page-link-num">2</span></a>
+        <a class="page-link" href="3.html"><span class="page-link-top">PAGE 03 <span class="arrow" aria-hidden="true">↗</span></span><span class="page-link-num">3</span></a>
+      </div>
+      <p class="section-note">1, 2, 3 버튼은 각각 1.html, 2.html, 3.html로 연결됩니다. 해당 파일은 추후 같은 폴더에 추가하면 됩니다.</p>
+    </section>
+  </main>
+  <footer class="footer"><div class="wrap footer-inner"><strong>WON NAM GYEONG.</strong><span>PERSONAL PORTFOLIO © 2026</span></div></footer>
+</body>
+</html>
